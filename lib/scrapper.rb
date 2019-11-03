@@ -3,6 +3,6 @@ require 'open-uri'
 require 'pry'
 
 class Scapper
-  #self.stockmarket(html)
-  #self.alt site
+  #self.stockmarket(target)
+  #self.top_stocks
 end
