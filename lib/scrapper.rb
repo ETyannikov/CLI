@@ -4,7 +4,16 @@ require 'pry'
 
 class Scapper
   def self.stockmarket(target)
-    #https://money.cnn.com/data/markets/
+    site = Nokogiri::HTML(open("https://money.cnn.com/data/markets/")
+    
+    site.css("ul.three-equal-columns wsod").each do |stock|
+    
+    end
+    
   end
-  #self.top_stocks
+  def self.top_stocks
+    site = Nokogiri::HTML(open("https://money.cnn.com/data/hotstocks/index.html")
+    
+    site 
+  end
 end
