@@ -3,6 +3,8 @@ require 'open-uri'
 require 'pry'
 
 class Scapper
-  #self.stockmarket(target)
+  def self.stockmarket(target)
+    #https://money.cnn.com/data/markets/
+  end
   #self.top_stocks
 end
