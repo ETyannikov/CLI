@@ -1,10 +1,7 @@
 class Stocks
-  attr_accessor :nasDac, :dow, :sAndp, :hotStocks
+  attr_accessor :name, :points, :percent, :total
   
-  def initialize(array)
-    @nasDac = array[0]
-    @dow = array[1]
-    @sAndp = array[2]
-    @hotStocks = array[3]
+  def initialize(hash)
+    hash.each {|key, value| self.send(("#{key}="), value)}
   end
 end
