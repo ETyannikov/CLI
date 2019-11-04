@@ -3,7 +3,7 @@ require 'nokogiri'
 require 'open-uri'
 require 'pry'
 
-class Scapper
+class Scaper
   def self.stockmarket(target)
     target = target.to_i
     target -= 1
@@ -16,13 +16,13 @@ class Scapper
       :points => column.css("a span.ticker-points-change span").text,
       :total => column.css("a span.ticker-points").text
     }
-    binding.pry
-
+  hash
   end
+  
   def self.top_stocks
     site = Nokogiri::HTML(open("https://money.cnn.com/data/hotstocks/index.html"))
     
     site 
   end
-  stockmarket("1")
+
 end
