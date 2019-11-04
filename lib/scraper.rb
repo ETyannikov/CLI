@@ -3,7 +3,7 @@ require 'nokogiri'
 require 'open-uri'
 require 'pry'
 
-class Scaper
+class Scraper
   def self.stockmarket(target)
     target = target.to_i
     target -= 1
