@@ -10,15 +10,26 @@ class Command
   
   #input loop
   def call
+  puts "Howdy!"
+  puts "Type 1 for Dow, 2 for Nasdaq, or 3 for S&P"
+  puts "For all 3, type all"
   @input = gets.chomp
     until @input == "exit"
       case @input
         when "1"
           present(scrape(@input))
+          puts "-----------------------------------"
         when "2"
           present(scrape(@input))
+          puts "-----------------------------------"
         when "3"
           present(scrape(@input))
+          puts "-----------------------------------"
+        when "all"
+          present(scrape(1))
+          present(scrape(2))
+          present(scrape(3))
+          puts "-----------------------------------"
         when "pry"
           binding.pry
       end #case
@@ -27,6 +38,7 @@ class Command
   end #call
   
   def present(stock)
+    puts "-----------------------------------"
     puts "#{stock.name} #{stock.percent}"
     puts "#{stock.total} / #{stock.percent}"
   end
