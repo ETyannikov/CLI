@@ -5,7 +5,6 @@ require 'pry'
 
 class Scraper
   def self.stockmarket(target)
-    target = target.to_i
     target -= 1
     site = Nokogiri::HTML(open("https://money.cnn.com/data/markets/"))
 
@@ -22,7 +21,13 @@ class Scraper
   def self.top_stocks
     site = Nokogiri::HTML(open("https://money.cnn.com/data/hotstocks/index.html"))
     
+    table = site.css("table.wsod_dataTable.wsod_dataTableBigAlt tr")
+    table.css("td").each do |item|
+    name = item.css("span").text
+    binding.pry
+    end
     site 
   end
-
+top_stocks
 end
+

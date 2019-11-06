@@ -16,13 +16,13 @@ class Command
   @input = gets.chomp
     until @input == "exit"
       case @input
-        when "1"
+        when 1
           present(scrape(@input))
           puts "-----------------------------------"
-        when "2"
+        when 2
           present(scrape(@input))
           puts "-----------------------------------"
-        when "3"
+        when 3
           present(scrape(@input))
           puts "-----------------------------------"
         when "all"
