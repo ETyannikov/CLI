@@ -22,11 +22,29 @@ class Scraper
     site = Nokogiri::HTML(open("https://money.cnn.com/data/hotstocks/index.html"))
     
     table = site.css("table.wsod_dataTable.wsod_dataTableBigAlt tr")
+    group = []
+    counter = 1
+    hash = {}
     table.css("td").each do |item|
-    name = item.css("span").text
+      name = item.css("span span.posData").text
+      name = item.css("span").text if name == ""
+      case counter
+        when 1
+          hash[:name] = name
+        when 2
+          hash[:total] = name
+        when 3
+          hash[:points] = name
+        when 4
+          hash[:percent] = name
+          counter = 0
+          group << hash
+          hash = {}
+      end #case loop
+      counter += 1
+    end #each loop
     binding.pry
-    end
-    site 
+    group
   end
 top_stocks
 end
