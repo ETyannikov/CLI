@@ -43,9 +43,7 @@ class Scraper
       end #case loop
       counter += 1
     end #each loop
-    binding.pry
     group
   end
-top_stocks
 end
 

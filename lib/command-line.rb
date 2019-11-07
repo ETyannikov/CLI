@@ -30,6 +30,7 @@ class Command
           present(scrape(2))
           present(scrape(3))
           puts "-----------------------------------"
+        when "active"
         when "pry"
           binding.pry
       end #case
@@ -48,6 +49,15 @@ class Command
     stocks = Stocks.new(Scraper.stockmarket(target))
     stocks
   end
+  
+  def active
+    scrape = Scraper.top_stocks
+    scrape.each do |stock|
+      toPresent = Stocks.new(stock)
+      present(toPresent)
+    end #each loop
+    puts "-----------------------------------"
+  end # active method
   
   #scrape top 5 stocks
   #scrape all
