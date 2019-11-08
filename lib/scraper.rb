@@ -5,6 +5,7 @@ require 'pry'
 
 class Scraper
   def self.stockmarket(target)
+    target = target.to_i
     target -= 1
     site = Nokogiri::HTML(open("https://money.cnn.com/data/markets/"))
 

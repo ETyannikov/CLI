@@ -2,7 +2,6 @@ require_relative "../lib/stonks.rb"
 require_relative "../lib/scraper.rb"
 require 'pry'
 class Command
-  attr_accessor :last
   
   def initialize
     call
@@ -13,16 +12,18 @@ class Command
   puts "Howdy!"
   puts "Type 1 for Dow, 2 for Nasdaq, or 3 for S&P"
   puts "For all 3, type all"
+  puts "To see the most active stocks, type active"
+  puts "To exit, type exit"
   @input = gets.chomp
     until @input == "exit"
       case @input
-        when 1
+        when "1"
           present(scrape(@input))
           puts "-----------------------------------"
-        when 2
+        when "2"
           present(scrape(@input))
           puts "-----------------------------------"
-        when 3
+        when "3"
           present(scrape(@input))
           puts "-----------------------------------"
         when "all"
@@ -31,6 +32,7 @@ class Command
           present(scrape(3))
           puts "-----------------------------------"
         when "active"
+          active
         when "pry"
           binding.pry
       end #case
@@ -41,7 +43,7 @@ class Command
   def present(stock)
     puts "-----------------------------------"
     puts "#{stock.name} #{stock.percent}"
-    puts "#{stock.total} / #{stock.percent}"
+    puts "#{stock.total} / #{stock.points}"
   end
     
   def scrape(target)
@@ -59,10 +61,6 @@ class Command
     puts "-----------------------------------"
   end # active method
   
-  #scrape top 5 stocks
-  #scrape all
-  #update info(repeats last action)
-
 end
 
 Command.new
