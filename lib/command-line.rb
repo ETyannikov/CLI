@@ -33,8 +33,6 @@ class Command
           puts "-----------------------------------"
         when "active"
           active
-        when "pry"
-          binding.pry
       end #case
       @input = gets.chomp
     end #until
@@ -47,8 +45,8 @@ class Command
   end
     
   def scrape(target)
-    scrape = Scraper.stockmarket(target)
-    stocks = Stocks.new(Scraper.stockmarket(target))
+    scrape1 = Scraper.stockmarket(target)
+    stocks = Stocks.new(scrape1)
     stocks
   end
   
@@ -62,5 +60,3 @@ class Command
   end # active method
   
 end
-
-Command.new

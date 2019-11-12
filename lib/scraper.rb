@@ -28,6 +28,7 @@ class Scraper
     hash = {}
     table.css("td").each do |item|
       name = item.css("span span.posData").text
+      name = item.css("span span.negData").text
       name = item.css("span").text if name == ""
       case counter
         when 1
