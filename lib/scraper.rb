@@ -1,4 +1,3 @@
-require_relative "../lib/stonks.rb"
 require 'nokogiri'
 require 'open-uri'
 require 'pry'
