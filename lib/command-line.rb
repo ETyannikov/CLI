@@ -58,5 +58,4 @@ class Command
     end #each loop
     puts "-----------------------------------"
   end # active method
-  
 end

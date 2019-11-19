@@ -1,6 +1,6 @@
 # Cli
 
-Grabs stocks
+A simple application that scrapes from "https://money.cnn.com/data/markets/". It presents the stock market and most active stocks when asked.
 
 ## Installation
 
@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+TODO: Run bin/console
 
 ## Development
 
