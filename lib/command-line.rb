@@ -33,6 +33,8 @@ class Command
           puts "-----------------------------------"
         when "active"
           active
+        else
+          puts "Invalid input"
       end #case
       @input = gets.chomp
     end #until
